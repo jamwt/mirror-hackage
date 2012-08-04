@@ -13,3 +13,5 @@ has processed all packages in the upstream log.
 
 Modify the `remote-repo:` entry in `~/.cabal/config` to point machines
 to your local mirror.
+
+*Note: expect to devote 10-15GB to your Hackage mirror as of 2012-08*
