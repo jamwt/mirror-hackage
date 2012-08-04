@@ -64,7 +64,7 @@ log_data = resp.content.splitlines()
 end_okay()
 
 mark = open("_mark", "r").read().strip() if os.path.isfile("_mark") else "(missing)"
-start_line("[2] Scanning for bookmark %r" % mark)
+start_line("[2] Scanning for %r" % mark)
 
 pos = -1
 
