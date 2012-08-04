@@ -99,6 +99,9 @@ def mirror_package(full, package, version):
     mkdir_p("index/%s/%s" % (package, version))
 
     cabal_r = requests.get(url_base + "%s/%s/%s.cabal" % (package, version, package))
+    if cabal_r.status_code == 404:
+        information("Package %s seems to have been removed!  Skipping..." % full)
+        return
     assert cabal_r.status_code == 200, "non-200 from cabal download"
     with open("index/%s/%s/%s.cabal" % (package, version, package), "w") as f:
         f.write(cabal_r.content)
